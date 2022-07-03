@@ -657,6 +657,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+  outline: none;
 }
 
 .footer-subscribe .mail-input::placeholder {
@@ -811,11 +812,32 @@ body {
   border-radius: 4px;
 
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+
+  padding-left: 42px;
+}
+
+.form-field .thumb {
+  position: relative;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form .input:hover,
 .modal-form .input:focus {
   border: 1px solid var(--focus-color);
+}
+
+.form-field .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  margin: 11px 12px;
+}
+
+.modal-form .thumb:hover {
+  fill: var(--focus-color);
 }
 
 .modal-form .comment {
