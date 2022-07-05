@@ -657,7 +657,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-  outline: none;
+  /* outline: none; */
 }
 
 .footer-subscribe .mail-input::placeholder {
@@ -811,7 +811,7 @@ body {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
 
   padding-left: 42px;
@@ -819,26 +819,35 @@ body {
 
 .form-field .thumb {
   position: relative;
-
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-form .input:hover,
-.modal-form .input:focus {
-  border: 1px solid var(--focus-color);
 }
 
 .form-field .icon {
   position: absolute;
-  top: 0;
-  left: 0;
 
-  margin: 11px 12px;
+  top: 50%;
+  left: 11px;
+  transform: translateY(-50%);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form .thumb:hover {
+.modal-form .input:focus {
+  border-color: var(--focus-color);
+}
+
+.modal-form .input:focus + .icon {
   fill: var(--focus-color);
 }
+
+/* другой способ не зависит от последовательности */
+
+/* .modal-form .thumb:focus-within .icon {
+  fill: var(--focus-color);
+}
+
+.modal-form .thumb:focus-within .input {
+  border-color: var(--focus-color);
+} */
 
 .modal-form .comment {
   height: 120px;
@@ -855,11 +864,15 @@ body {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.modal .newsletter {
+.newsletter .checkbox {
+  appearance: none;
+}
+
+.newsletter .label {
   display: flex;
   align-items: center;
 
-  margin-left: 12px;
+  margin-left: 13px;
   margin-bottom: 30px;
 
   font-weight: 400;
@@ -868,6 +881,28 @@ body {
   letter-spacing: 0.03em;
 
   color: var(--text-second-black-color);
+}
+
+.newsletter .icon {
+  margin-right: 7px;
+
+  width: 16px;
+  height: 15px;
+
+  border: 2px solid var(--text-primary-black-color);
+  opacity: 0.2;
+  border-radius: 2px;
+}
+
+.checkbox:checked + .icon {
+  background-color: var(--focus-color);
+  border-color: transparent;
+  opacity: 1;
+
+  background-image: url(../images/icon-check.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .newsletter .link {
