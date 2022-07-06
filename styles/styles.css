@@ -733,7 +733,6 @@ body {
   transform: translate(-50%, -50%) scale(1);
 
   min-width: 528px;
-  min-height: 581px;
 
   padding: 40px;
 
@@ -776,6 +775,7 @@ body {
 .modal .modal-title {
   margin-bottom: 12px;
 
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.03em;
@@ -854,6 +854,8 @@ body {
   padding: 12px 16px;
 
   resize: none;
+
+  margin-bottom: 10px;
 }
 
 .modal-form .comment::placeholder {
@@ -871,8 +873,8 @@ body {
 .newsletter .label {
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  margin-left: 13px;
   margin-bottom: 30px;
 
   font-weight: 400;
